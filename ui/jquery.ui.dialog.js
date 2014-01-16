@@ -38,7 +38,7 @@ var sizeRelatedOptions = {
 $.widget( "ui.dialog", {
 	version: "@VERSION",
 	options: {
-		appendTo: "body",
+		appendTo: null,
 		autoOpen: true,
 		buttons: [],
 		closeOnEscape: true,

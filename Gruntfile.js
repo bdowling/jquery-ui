@@ -207,6 +207,7 @@ grunt.initConfig({
 			return !( /(all|index|test)\.html$/ ).test( file );
 		}),
 	options: {
+                phantomScript: "tests/phantomjs-main.js",
 		page : {
 			viewportSize : { width: 700, height: 500 }
 		}
