@@ -125,12 +125,12 @@ $.widget( "ui.dialog", {
 		}
 	},
 
-	_appendTo: function() {
+	_appendTo: function(parent) {
 		var element = this.options.appendTo;
 		if ( element && (element.jquery || element.nodeType) ) {
 			return $( element );
 		}
-		return this.document.find( element || "body" ).eq( 0 );
+		return this.document.find( element || ( parent ? this.uiDialog.parent() : "body" ) ).eq( 0 );
 	},
 
 	_destroy: function() {
@@ -588,7 +588,7 @@ $.widget( "ui.dialog", {
 		this._super( key, value );
 
 		if ( key === "appendTo" ) {
-			this.uiDialog.appendTo( this._appendTo() );
+			this.uiDialog.appendTo( this._appendTo(1) );
 		}
 
 		if ( key === "buttons" ) {
@@ -744,7 +744,7 @@ $.widget( "ui.dialog", {
 
 		this.overlay = $("<div>")
 			.addClass("ui-widget-overlay ui-front")
-			.appendTo( this._appendTo() );
+			.appendTo( this._appendTo(1) );
 		this._on( this.overlay, {
 			mousedown: "_keepFocus"
 		});
