@@ -27,7 +27,6 @@ test("start", function() {
 	ok("position" in hash, "UI hash includes: position");
 	ok("offset" in hash, "UI hash includes: offset");
 
-
 });
 
 test("sort", function() {
@@ -172,33 +171,33 @@ test("#3019: Stop fires too early", function() {
 			}
 		});
 
-	TestHelpers.sortable.sort($("li", el)[0], 0, 44, 2, "Dragging the sortable");
+	TestHelpers.sortable.sort($("li", el)[ 0 ], 0, 44, 2, "Dragging the sortable");
 	equal(helper, null, "helper should be false");
 
 });
 
-test("#4752: link event firing on sortable with connect list", function () {
+test("#4752: link event firing on sortable with connect list", function() {
 	expect( 10 );
 
 	var fired = {},
-		hasFired = function (type) { return (type in fired) && (true === fired[type]); };
+		hasFired = function(type) { return (type in fired) && (true === fired[type]); };
 
 	$("#sortable").clone().attr("id", "sortable2").insertAfter("#sortable");
 
 	$("#qunit-fixture ul").sortable({
 		connectWith: "#qunit-fixture ul",
-		change: function () {
+		change: function() {
 			fired.change = true;
 		},
-		receive: function () {
+		receive: function() {
 			fired.receive = true;
 		},
-		remove: function () {
+		remove: function() {
 			fired.remove = true;
 		}
 	});
 
-	$("#qunit-fixture ul").bind("click.ui-sortable-test", function () {
+	$("#qunit-fixture ul").bind("click.ui-sortable-test", function() {
 		fired.click = true;
 	});
 

@@ -46,11 +46,10 @@ test("autoRefresh", function() {
 test("filter", function() {
 	expect(2);
 
-	var actual =0,
+	var actual = 0,
 		el = $("#selectable1"),
 		sel = $("*", el),
 		selected = function() { actual += 1; };
-
 
 	el = $("#selectable1").selectable({ filter: ".special", selected: selected });
 	el.simulate( "drag", {

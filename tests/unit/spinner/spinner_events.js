@@ -132,11 +132,11 @@ asyncTest( "change", function() {
 	}
 
 	function focusWrap( fn, next ) {
-		element[0].focus();
+		element[ 0 ].focus();
 		setTimeout( function() {
 			fn();
 			setTimeout(function() {
-				element[0].blur();
+				element[ 0 ].blur();
 				setTimeout( next );
 			});
 		});

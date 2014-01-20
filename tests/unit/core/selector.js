@@ -59,13 +59,13 @@ test("data", function() {
 	el = $("<div>").data("test", []);
 	shouldHaveData("data set to empty array");
 
-	el = $("<div>").data("test", [1]);
+	el = $("<div>").data("test", [ 1 ]);
 	shouldHaveData("data set to array");
 
 	el = $("<div>").data("test", {});
 	shouldHaveData("data set to empty object");
 
-	el = $("<div>").data("test", {foo: "bar"});
+	el = $("<div>").data("test", { foo: "bar" });
 	shouldHaveData("data set to object");
 
 	el = $("<div>").data("test", new Date());

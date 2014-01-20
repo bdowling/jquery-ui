@@ -36,8 +36,8 @@ test("n", function() {
 	TestHelpers.resizable.drag(handle, 0, 50);
 	equal( target.height(), 100, "compare height" );
 
-	equal( target[0].style.left, "", "left should not be modified" );
-	equal( target[0].style.width, "", "width should not be modified" );
+	equal( target[ 0 ].style.left, "", "left should not be modified" );
+	equal( target[ 0 ].style.width, "", "width should not be modified" );
 });
 
 test("s", function() {
@@ -51,9 +51,9 @@ test("s", function() {
 	TestHelpers.resizable.drag(handle, 0, -50);
 	equal( target.height(), 100, "compare height" );
 
-	equal( target[0].style.top, "", "top should not be modified" );
-	equal( target[0].style.left, "", "left should not be modified" );
-	equal( target[0].style.width, "", "width should not be modified" );
+	equal( target[ 0 ].style.top, "", "top should not be modified" );
+	equal( target[ 0 ].style.left, "", "left should not be modified" );
+	equal( target[ 0 ].style.width, "", "width should not be modified" );
 });
 
 test("e", function() {
@@ -67,9 +67,9 @@ test("e", function() {
 	TestHelpers.resizable.drag(handle, -50);
 	equal( target.width(), 100, "compare width" );
 
-	equal( target[0].style.height, "", "height should not be modified" );
-	equal( target[0].style.top, "", "top should not be modified" );
-	equal( target[0].style.left, "", "left should not be modified" );
+	equal( target[ 0 ].style.height, "", "height should not be modified" );
+	equal( target[ 0 ].style.top, "", "top should not be modified" );
+	equal( target[ 0 ].style.left, "", "left should not be modified" );
 });
 
 test("w", function() {
@@ -83,8 +83,8 @@ test("w", function() {
 	TestHelpers.resizable.drag(handle, 50);
 	equal( target.width(), 100, "compare width" );
 
-	equal( target[0].style.height, "", "height should not be modified" );
-	equal( target[0].style.top, "", "top should not be modified" );
+	equal( target[ 0 ].style.height, "", "height should not be modified" );
+	equal( target[ 0 ].style.top, "", "top should not be modified" );
 });
 
 test("ne", function() {
@@ -100,7 +100,7 @@ test("ne", function() {
 	equal( target.width(), 100, "compare width" );
 	equal( target.height(), 100, "compare height" );
 
-	equal( target[0].style.left, "", "left should not be modified" );
+	equal( target[ 0 ].style.left, "", "left should not be modified" );
 });
 
 test("se", function() {
@@ -116,8 +116,8 @@ test("se", function() {
 	equal( target.width(), 100, "compare width" );
 	equal( target.height(), 100, "compare height" );
 
-	equal( target[0].style.top, "", "top should not be modified" );
-	equal( target[0].style.left, "", "left should not be modified" );
+	equal( target[ 0 ].style.top, "", "top should not be modified" );
+	equal( target[ 0 ].style.left, "", "left should not be modified" );
 });
 
 test("sw", function() {
@@ -133,7 +133,7 @@ test("sw", function() {
 	equal( target.width(), 100, "compare width" );
 	equal( target.height(), 100, "compare height" );
 
-	equal( target[0].style.top, "", "top should not be modified" );
+	equal( target[ 0 ].style.top, "", "top should not be modified" );
 });
 
 test("nw", function() {
@@ -218,9 +218,9 @@ test( "nested resizable", function() {
 	outer.appendTo( target );
 	inner.appendTo( outer );
 
-	inner.resizable( { handles : "e" } );
-	outer.resizable( { handles : "e" } );
-	target.resizable( { handles : "e" } );
+	inner.resizable( { handles: "e" } );
+	outer.resizable( { handles: "e" } );
+	target.resizable( { handles: "e" } );
 
 	innerHandle = $( "#inner > .ui-resizable-e" );
 	outerHandle = $( "#outer > .ui-resizable-e" );

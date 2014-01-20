@@ -2,7 +2,7 @@ TestHelpers.draggable = {
 	// TODO: remove the unreliable offset hacks
 	unreliableOffset: $.ui.ie && ( !document.documentMode || document.documentMode < 8 ) ? 2 : 0,
 	// Support: Opera 12.10, Safari 5.1, jQuery <1.8
-	unreliableContains: (function(){
+	unreliableContains: (function() {
 		var element = $( "<div>" );
 		return $.contains( element[ 0 ].ownerDocument, element[ 0 ] );
 	})(),
@@ -11,7 +11,7 @@ TestHelpers.draggable = {
 
 		$( el ).one( "dragstop", function( event, ui ) {
 			var positionExpected = { left: ui.originalPosition.left + expectedDX, top: ui.originalPosition.top + expectedDY };
-			deepEqual( ui.position, positionExpected, "position dragged[" + dx + ", " + dy + "] " + msg );
+			deepEqual( ui.position, positionExpected, "position dragged[ " + dx + ", " + dy + " ] " + msg );
 		} );
 	},
 	testDragOffset: function( el, dx, dy, expectedDX, expectedDY, msg ) {
@@ -21,7 +21,7 @@ TestHelpers.draggable = {
 			offsetExpected = { left: offsetBefore.left + expectedDX, top: offsetBefore.top + expectedDY };
 
 		$( el ).one( "dragstop", function( event, ui ) {
-			deepEqual( ui.helper.offset(), offsetExpected, "offset dragged[" + dx + ", " + dy + "] " + msg );
+			deepEqual( ui.helper.offset(), offsetExpected, "offset dragged[ " + dx + ", " + dy + " ] " + msg );
 		} );
 	},
 	testDrag: function( el, handle, dx, dy, expectedDX, expectedDY, msg ) {
@@ -62,7 +62,7 @@ TestHelpers.draggable = {
 		});
 		$( el ).unbind( "dragstop" );
 	},
-	setScrollable: function ( what, isScrollable ) {
+	setScrollable: function( what, isScrollable ) {
 		var overflow = isScrollable ? "scroll" : "hidden";
 		$( what ).css({ overflow: overflow, overflowX: overflow, overflowY: overflow });
 	},
@@ -90,12 +90,12 @@ TestHelpers.draggable = {
 			dy: y
 		});
 	},
-	trackMouseCss : function( el ) {
+	trackMouseCss: function( el ) {
 		el.bind( "drag", function() {
 			el.data( "last_dragged_cursor", $( "body" ).css( "cursor" ) );
 		});
 	},
-	trackAppendedParent : function( el ) {
+	trackAppendedParent: function( el ) {
 		// TODO: appendTo is currently ignored if helper is original (see #7044)
 		el.draggable( "option", "helper", "clone" );
 

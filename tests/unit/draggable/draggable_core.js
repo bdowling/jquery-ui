@@ -35,8 +35,8 @@ test( "element types", function() {
 
 		// Support: FF, Chrome, and IE9,
 		// there are some rounding errors in so we can't say equal, we have to settle for close enough
-		closeEnough( offsetBefore.left, offsetAfter.left - 50, 1, "dragged[50, 50] " + "<" + typeName + ">" );
-		closeEnough( offsetBefore.top, offsetAfter.top - 50, 1, "dragged[50, 50] " + "<" + typeName + ">" );
+		closeEnough( offsetBefore.left, offsetAfter.left - 50, 1, "dragged[ 50, 50 ] " + "<" + typeName + ">" );
+		closeEnough( offsetBefore.top, offsetAfter.top - 50, 1, "dragged[ 50, 50 ] " + "<" + typeName + ">" );
 		el.draggable("destroy");
 		el.remove();
 	});
@@ -174,7 +174,6 @@ test( "#5009: scroll not working with parent's position fixed", function() {
 			}
 		});
 
-
 	TestHelpers.forceScrollableWindow();
 
 	$( "#wrapper" ).css( "position", "fixed" );
@@ -221,7 +220,7 @@ test( "#9379: Draggable: position bug in scrollable div", function() {
 	});
 });
 
-test( "#5727: draggable from iframe" , function() {
+test( "#5727: draggable from iframe", function() {
 	expect( 1 );
 
 	var iframeBody, draggable1,

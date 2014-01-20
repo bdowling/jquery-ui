@@ -24,7 +24,6 @@ QUnit.reset = function() {
 	reset.apply( this, arguments );
 };
 
-
 QUnit.config.requireExpects = true;
 
 /*
@@ -181,9 +180,9 @@ TestHelpers.commonWidgetTests = function( widget, settings ) {
 	});
 };
 
-TestHelpers.onFocus= function( element, onFocus ) {
-	var fn = function( event ){
-		if( !event.originalEvent ) {
+TestHelpers.onFocus = function( element, onFocus ) {
+	var fn = function( event ) {
+		if ( !event.originalEvent ) {
 			return;
 		}
 		element.unbind( "focus", fn );

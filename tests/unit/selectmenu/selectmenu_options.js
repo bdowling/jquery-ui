@@ -1,8 +1,8 @@
-(function ( $ ) {
+(function( $ ) {
 
 module( "selectmenu: options" );
 
-test( "appendTo another element", function () {
+test( "appendTo another element", function() {
 	expect( 8 );
 
 	var detached = $( "<div>" ),
@@ -44,8 +44,7 @@ test( "appendTo another element", function () {
 	element.selectmenu( "destroy" );
 });
 
-
-test( "CSS styles", function () {
+test( "CSS styles", function() {
 	expect( 2 );
 
 	var element = $( "#speed" ).selectmenu(),
@@ -57,8 +56,7 @@ test( "CSS styles", function () {
 	ok( menu.hasClass( "ui-corner-bottom" ) && !menu.hasClass( "ui-corner-all" ), "menu styles dropdown" );
 });
 
-
-test( "Width", function () {
+test( "Width", function() {
 	expect( 8 );
 
 	var element = $( "#speed" ),

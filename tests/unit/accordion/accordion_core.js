@@ -27,7 +27,7 @@ test( "handle click on header-descendant", function() {
 	state( element, 0, 1, 0 );
 });
 
-test( "accessibility", function () {
+test( "accessibility", function() {
 	expect( 37 );
 	var element = $( "#list1" ).accordion({
 			active: 1
@@ -100,7 +100,7 @@ asyncTest( "keyboard support", function() {
 		ok( headers.eq( 2 ).is( ".ui-state-focus" ), "END moves focus to last header" );
 
 		headers.eq( 2 ).simulate( "keydown", { keyCode: keyCode.ENTER } );
-		equal( element.accordion( "option", "active" ) , 2, "ENTER activates panel" );
+		equal( element.accordion( "option", "active" ), 2, "ENTER activates panel" );
 		headers.eq( 1 ).simulate( "keydown", { keyCode: keyCode.SPACE } );
 		equal( element.accordion( "option", "active" ), 1, "SPACE activates panel" );
 

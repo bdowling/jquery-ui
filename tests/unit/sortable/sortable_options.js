@@ -274,11 +274,11 @@ test("{ grid: false }, default", function() {
 	ok(false, "missing test - untested code is broken code.");
 });
 
-test("{ grid: [17, 3] }", function() {
+test("{ grid: [ 17, 3 ] }", function() {
 	ok(false, "missing test - untested code is broken code.");
 });
 
-test("{ grid: [3, 7] }", function() {
+test("{ grid: [ 3, 7 ] }", function() {
 	ok(false, "missing test - untested code is broken code.");
 });
 

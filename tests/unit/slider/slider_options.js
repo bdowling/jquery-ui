@@ -8,7 +8,7 @@ function handle() {
 
 module( "slider: options" );
 
-test( "disabled", function(){
+test( "disabled", function() {
 	expect( 8 );
 	var count = 0;
 
@@ -19,7 +19,7 @@ test( "disabled", function(){
 
 	// enabled
 	ok( !element.hasClass( "ui-slider-disabled" ), "no disabled class" );
-	equal( element.slider( "option", "disabled" ), false , "is not disabled" );
+	equal( element.slider( "option", "disabled" ), false, "is not disabled" );
 
 	handle().simulate( "drag", { dx: 10 } );
 	equal( count, 1, "slider moved" );
@@ -93,9 +93,9 @@ test( "orientation", function() {
 	element.slider( options ).slider( "option", "orientation", "horizontal" );
 	ok( element.is( ".ui-slider-horizontal" ), "horizontal slider has class .ui-slider-horizontal" );
 	ok( !element.is( ".ui-slider-vertical" ), "horizontal slider does not have class .ui-slider-vertical" );
-	equal( handle()[0].style.left, percentVal + "%", "horizontal slider handle is positioned with left: %" );
+	equal( handle()[ 0 ].style.left, percentVal + "%", "horizontal slider handle is positioned with left: %" );
 
-	element.slider( "destroy" ) ;
+	element.slider( "destroy" );
 
 	options = {
 		max: 2,
@@ -109,7 +109,7 @@ test( "orientation", function() {
 	element.slider( options ).slider( "option", "orientation", "vertical" );
 	ok( element.is( ".ui-slider-vertical" ), "vertical slider has class .ui-slider-vertical" );
 	ok( !element.is( ".ui-slider-horizontal" ), "vertical slider does not have class .ui-slider-horizontal" );
-	equal( handle()[0].style.bottom, percentVal + "%", "vertical slider handle is positioned with bottom: %" );
+	equal( handle()[ 0 ].style.bottom, percentVal + "%", "vertical slider handle is positioned with bottom: %" );
 
 	element.slider( "destroy" );
 
@@ -275,10 +275,10 @@ test( "range", function() {
 	equal( element.find( ".ui-slider-handle" ).length, 2, "range switch from max to true, two handles" );
 	equal( element.find( ".ui-slider-range-max" ).length, 0, "range switch from max to true" );
 	equal( element.find( ".ui-slider-range-min" ).length, 0, "range switch from max to true" );
-	equal( element.slider( "option", "value" ), 0 , "option value" );
-	equal( element.slider( "value" ), 1 , "value" );
-	deepEqual( element.slider( "option", "values" ), [1, 1], "option values" );
-	deepEqual( element.slider( "values" ), [1, 1], "values" );
+	equal( element.slider( "option", "value" ), 0, "option value" );
+	equal( element.slider( "value" ), 1, "value" );
+	deepEqual( element.slider( "option", "values" ), [ 1, 1 ], "option values" );
+	deepEqual( element.slider( "values" ), [ 1, 1 ], "values" );
 	element.slider( "destroy" );
 
 	// Change range from true to min
@@ -293,9 +293,9 @@ test( "range", function() {
 	equal( element.find( ".ui-slider-range-max" ).length, 0, "range switch from true to min" );
 	equal( element.find( ".ui-slider-range-min" ).length, 1, "range switch from true to min" );
 	equal( element.slider( "option", "value" ), 1, "value" );
-	equal( element.slider( "value" ), 1 , "value" );
+	equal( element.slider( "value" ), 1, "value" );
 	equal( element.slider( "option", "values" ), null, "values" );
-	deepEqual( element.slider( "values" ), [] , "values" );
+	deepEqual( element.slider( "values" ), [], "values" );
 	element.slider( "destroy" );
 
 	// Change range from true to false
@@ -307,10 +307,10 @@ test( "range", function() {
 	}).slider( "option", "range", false );
 	equal( element.find( ".ui-slider-handle" ).length, 2, "range switch from true to false, both handles remain" );
 	equal( element.find( ".ui-slider-range" ).length, 0, "range switch from true to false" );
-	equal( element.slider( "option", "value" ), 0 , "option value" );
-	equal( element.slider( "value" ), 1 , "value" );
-	deepEqual( element.slider( "option", "values" ), [1, 1], "option values" );
-	deepEqual( element.slider( "values" ), [1, 1], "values" );
+	equal( element.slider( "option", "value" ), 0, "option value" );
+	equal( element.slider( "value" ), 1, "value" );
+	deepEqual( element.slider( "option", "values" ), [ 1, 1 ], "option values" );
+	deepEqual( element.slider( "values" ), [ 1, 1 ], "values" );
 	element.slider( "destroy" );
 });
 

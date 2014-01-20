@@ -80,7 +80,7 @@ asyncTest( "handle blur via click outside", function() {
 
 	click( element, "1" );
 	setTimeout(function() {
-		$( "<a>", { id: "remove"} ).appendTo( "body" ).trigger( "click" );
+		$( "<a>", { id: "remove" } ).appendTo( "body" ).trigger( "click" );
 		setTimeout(function() {
 			start();
 		}, 350 );
@@ -169,7 +169,6 @@ asyncTest( "handle submenu auto collapse: mouseleave", function() {
 	setTimeout( menumouseleave1, 350 );
 });
 
-
 asyncTest( "handle keyboard navigation on menu without scroll and without submenus", function() {
 	expect( 12 );
 	var element = $( "#menu1" ).menu({
@@ -240,7 +239,7 @@ asyncTest( "handle keyboard navigation on menu without scroll and with submenus"
 	expect( 16 );
 	var element = $( "#menu2" ).menu({
 		select: function( event, ui ) {
-			log( $( ui.item[0] ).text() );
+			log( $( ui.item[ 0 ] ).text() );
 		},
 		focus: function( event ) {
 			log( $( event.target ).find( ".ui-state-focus" ).index() );
@@ -530,7 +529,7 @@ asyncTest( "handle keyboard navigation and mouse click on menu with disabled ite
 	expect( 6 );
 	var element = $( "#menu6" ).menu({
 		select: function( event, ui ) {
-			log( $( ui.item[0] ).text() );
+			log( $( ui.item[ 0 ] ).text() );
 		},
 		focus: function( event ) {
 			log( $( event.target ).find( ".ui-state-focus" ).index());
@@ -582,7 +581,7 @@ asyncTest( "handle keyboard navigation and mouse click on menu with dividers and
 	var element = $( "#menu7" ).menu({
 		items: "> :not('.ui-menu-group')",
 		select: function( event, ui ) {
-			log( $( ui.item[0] ).text() );
+			log( $( ui.item[ 0 ] ).text() );
 		},
 		focus: function( event ) {
 			log( $( event.target ).find( ".ui-state-focus" ).index());

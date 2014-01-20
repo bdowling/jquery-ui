@@ -42,7 +42,7 @@ test( "keydown HOME on handle sets value to min", function() {
 	element.slider( "value", 0 );
 
 	handle().simulate( "keydown", { keyCode: $.ui.keyCode.HOME } );
-	equal(element.slider( "value" ), options.min) ;
+	equal(element.slider( "value" ), options.min);
 
 	element.slider( "destroy" );
 });
@@ -61,7 +61,7 @@ test( "keydown END on handle sets value to max", function() {
 	element.slider( "value", 0 );
 
 	handle().simulate( "keydown", { keyCode: $.ui.keyCode.END } );
-	equal(element.slider( "value" ), options.max) ;
+	equal(element.slider( "value" ), options.max);
 
 	element.slider( "destroy" );
 

@@ -47,7 +47,7 @@ test("enable", function() {
 
 	el = $("#sortable").sortable({ disabled: true });
 
-	TestHelpers.sortable.sort($("li", el)[0], 0, 44, 0, ".sortable({ disabled: true })");
+	TestHelpers.sortable.sort($("li", el)[ 0 ], 0, 44, 0, ".sortable({ disabled: true })");
 
 	el.sortable("enable");
 	equal(el.sortable("option", "disabled"), false, "disabled option getter");
@@ -57,7 +57,7 @@ test("enable", function() {
 	el.sortable("option", "disabled", false);
 	equal(el.sortable("option", "disabled"), false, "disabled option setter");
 
-	TestHelpers.sortable.sort($("li", el)[0], 0, 44, 2, ".sortable('option', 'disabled', false)");
+	TestHelpers.sortable.sort($("li", el)[ 0 ], 0, 44, 2, ".sortable('option', 'disabled', false)");
 
 	expected = $("<div></div>").sortable(),
 	actual = expected.sortable("enable");

@@ -13,7 +13,7 @@ test("open", function() {
 		open: function(ev, ui) {
 			ok(element.dialog( "instance" )._isOpen, "interal _isOpen flag is set");
 			ok(true, "autoOpen: true fires open callback");
-			equal(this, element[0], "context of callback");
+			equal(this, element[ 0 ], "context of callback");
 			equal(ev.type, "dialogopen", "event type in callback");
 			deepEqual(ui, {}, "ui hash in callback");
 		}
@@ -25,20 +25,19 @@ test("open", function() {
 		autoOpen: false,
 		open: function(ev, ui) {
 			ok(true, ".dialog('open') fires open callback");
-			equal(this, element[0], "context of callback");
+			equal(this, element[ 0 ], "context of callback");
 			equal(ev.type, "dialogopen", "event type in callback");
 			deepEqual(ui, {}, "ui hash in callback");
 		}
 	}).bind("dialogopen", function(ev, ui) {
 		ok(element.dialog( "instance" )._isOpen, "interal _isOpen flag is set");
 		ok(true, "dialog('open') fires open event");
-		equal(this, element[0], "context of event");
+		equal(this, element[ 0 ], "context of event");
 		deepEqual(ui, {}, "ui hash in event");
 	});
 	element.dialog("open");
 	element.remove();
 });
-
 
 test( "focus", function() {
 	expect( 5 );
@@ -91,14 +90,14 @@ test("dragStart", function() {
 		element = $("<div></div>").dialog({
 			dragStart: function(ev, ui) {
 				ok(true, "dragging fires dragStart callback");
-				equal(this, element[0], "context of callback");
+				equal(this, element[ 0 ], "context of callback");
 				equal(ev.type, "dialogdragstart", "event type in callback");
 				ok(ui.position !== undefined, "ui.position in callback");
 				ok(ui.offset !== undefined, "ui.offset in callback");
 			}
 		}).bind("dialogdragstart", function(ev, ui) {
 			ok(true, "dragging fires dialogdragstart event");
-			equal(this, element[0], "context of event");
+			equal(this, element[ 0 ], "context of event");
 			ok(ui.position !== undefined, "ui.position in callback");
 			ok(ui.offset !== undefined, "ui.offset in callback");
 		});
@@ -116,7 +115,7 @@ test("drag", function() {
 			drag: function(ev, ui) {
 				if (!hasDragged) {
 					ok(true, "dragging fires drag callback");
-					equal(this, element[0], "context of callback");
+					equal(this, element[ 0 ], "context of callback");
 					equal(ev.type, "dialogdrag", "event type in callback");
 					ok(ui.position !== undefined, "ui.position in callback");
 					ok(ui.offset !== undefined, "ui.offset in callback");
@@ -126,7 +125,7 @@ test("drag", function() {
 			}
 		}).one("dialogdrag", function(ev, ui) {
 			ok(true, "dragging fires dialogdrag event");
-			equal(this, element[0], "context of event");
+			equal(this, element[ 0 ], "context of event");
 			ok(ui.position !== undefined, "ui.position in callback");
 			ok(ui.offset !== undefined, "ui.offset in callback");
 		});
@@ -143,14 +142,14 @@ test("dragStop", function() {
 		element = $("<div></div>").dialog({
 			dragStop: function(ev, ui) {
 				ok(true, "dragging fires dragStop callback");
-				equal(this, element[0], "context of callback");
+				equal(this, element[ 0 ], "context of callback");
 				equal(ev.type, "dialogdragstop", "event type in callback");
 				ok(ui.position !== undefined, "ui.position in callback");
 				ok(ui.offset !== undefined, "ui.offset in callback");
 			}
 		}).bind("dialogdragstop", function(ev, ui) {
 			ok(true, "dragging fires dialogdragstop event");
-			equal(this, element[0], "context of event");
+			equal(this, element[ 0 ], "context of event");
 			ok(ui.position !== undefined, "ui.position in callback");
 			ok(ui.offset !== undefined, "ui.offset in callback");
 		});
@@ -167,7 +166,7 @@ test("resizeStart", function() {
 		element = $("<div></div>").dialog({
 			resizeStart: function(ev, ui) {
 				ok(true, "resizing fires resizeStart callback");
-				equal(this, element[0], "context of callback");
+				equal(this, element[ 0 ], "context of callback");
 				equal(ev.type, "dialogresizestart", "event type in callback");
 				ok(ui.originalPosition !== undefined, "ui.originalPosition in callback");
 				ok(ui.originalSize !== undefined, "ui.originalSize in callback");
@@ -176,7 +175,7 @@ test("resizeStart", function() {
 			}
 		}).bind("dialogresizestart", function(ev, ui) {
 			ok(true, "resizing fires dialogresizestart event");
-			equal(this, element[0], "context of event");
+			equal(this, element[ 0 ], "context of event");
 			ok(ui.originalPosition !== undefined, "ui.originalPosition in callback");
 			ok(ui.originalSize !== undefined, "ui.originalSize in callback");
 			ok(ui.position !== undefined, "ui.position in callback");
@@ -196,7 +195,7 @@ test("resize", function() {
 			resize: function(ev, ui) {
 				if (!hasResized) {
 					ok(true, "resizing fires resize callback");
-					equal(this, element[0], "context of callback");
+					equal(this, element[ 0 ], "context of callback");
 					equal(ev.type, "dialogresize", "event type in callback");
 					ok(ui.originalPosition !== undefined, "ui.originalPosition in callback");
 					ok(ui.originalSize !== undefined, "ui.originalSize in callback");
@@ -208,7 +207,7 @@ test("resize", function() {
 			}
 		}).one("dialogresize", function(ev, ui) {
 			ok(true, "resizing fires dialogresize event");
-			equal(this, element[0], "context of event");
+			equal(this, element[ 0 ], "context of event");
 			ok(ui.originalPosition !== undefined, "ui.originalPosition in callback");
 			ok(ui.originalSize !== undefined, "ui.originalSize in callback");
 			ok(ui.position !== undefined, "ui.position in callback");
@@ -227,7 +226,7 @@ test("resizeStop", function() {
 		element = $("<div></div>").dialog({
 			resizeStop: function(ev, ui) {
 				ok(true, "resizing fires resizeStop callback");
-				equal(this, element[0], "context of callback");
+				equal(this, element[ 0 ], "context of callback");
 				equal(ev.type, "dialogresizestop", "event type in callback");
 				ok(ui.originalPosition !== undefined, "ui.originalPosition in callback");
 				ok(ui.originalSize !== undefined, "ui.originalSize in callback");
@@ -236,7 +235,7 @@ test("resizeStop", function() {
 			}
 		}).bind("dialogresizestop", function(ev, ui) {
 			ok(true, "resizing fires dialogresizestop event");
-			equal(this, element[0], "context of event");
+			equal(this, element[ 0 ], "context of event");
 				ok(ui.originalPosition !== undefined, "ui.originalPosition in callback");
 				ok(ui.originalSize !== undefined, "ui.originalSize in callback");
 				ok(ui.position !== undefined, "ui.position in callback");
@@ -254,13 +253,13 @@ asyncTest("close", function() {
 	var element = $("<div></div>").dialog({
 		close: function(ev, ui) {
 			ok(true, ".dialog('close') fires close callback");
-			equal(this, element[0], "context of callback");
+			equal(this, element[ 0 ], "context of callback");
 			equal(ev.type, "dialogclose", "event type in callback");
 			deepEqual(ui, {}, "ui hash in callback");
 		}
 	}).bind("dialogclose", function(ev, ui) {
 		ok(true, ".dialog('close') fires dialogclose event");
-		equal(this, element[0], "context of event");
+		equal(this, element[ 0 ], "context of event");
 		deepEqual(ui, {}, "ui hash in event");
 	});
 	element.dialog("close");
@@ -271,14 +270,14 @@ asyncTest("close", function() {
 		hide: 10,
 		close: function(ev, ui) {
 			ok(true, ".dialog('close') fires close callback");
-			equal(this, element[0], "context of callback");
+			equal(this, element[ 0 ], "context of callback");
 			equal(ev.type, "dialogclose", "event type in callback");
 			deepEqual(ui, {}, "ui hash in callback");
 			start();
 		}
 	}).bind("dialogclose", function(ev, ui) {
 		ok(true, ".dialog('close') fires dialogclose event");
-		equal(this, element[0], "context of event");
+		equal(this, element[ 0 ], "context of event");
 		deepEqual(ui, {}, "ui hash in event");
 	});
 	element.dialog("close");
@@ -290,7 +289,7 @@ test("beforeClose", function() {
 	var element = $("<div></div>").dialog({
 		beforeClose: function(ev, ui) {
 			ok(true, ".dialog('close') fires beforeClose callback");
-			equal(this, element[0], "context of callback");
+			equal(this, element[ 0 ], "context of callback");
 			equal(ev.type, "dialogbeforeclose", "event type in callback");
 			deepEqual(ui, {}, "ui hash in callback");
 			return false;
@@ -304,7 +303,7 @@ test("beforeClose", function() {
 	element = $("<div></div>").dialog();
 	element.dialog("option", "beforeClose", function(ev, ui) {
 		ok(true, ".dialog('close') fires beforeClose callback");
-		equal(this, element[0], "context of callback");
+		equal(this, element[ 0 ], "context of callback");
 		equal(ev.type, "dialogbeforeclose", "event type in callback");
 		deepEqual(ui, {}, "ui hash in callback");
 		return false;
@@ -316,7 +315,7 @@ test("beforeClose", function() {
 
 	element = $("<div></div>").dialog().bind("dialogbeforeclose", function(ev, ui) {
 		ok(true, ".dialog('close') triggers dialogbeforeclose event");
-		equal(this, element[0], "context of event");
+		equal(this, element[ 0 ], "context of event");
 		deepEqual(ui, {}, "ui hash in event");
 		return false;
 	});
@@ -333,7 +332,7 @@ asyncTest("ensure dialog's container doesn't scroll on resize and focus", functi
 		initialScroll = $(window).scrollTop();
 	element.dialog("option", "height", 600);
 	equal($(window).scrollTop(), initialScroll, "scroll hasn't moved after height change");
-	setTimeout( function(){
+	setTimeout( function() {
 		$(".ui-dialog-titlebar-close").simulate("mousedown");
 		equal($(window).scrollTop(), initialScroll, "scroll hasn't moved after focus moved to dialog");
 		element.dialog("destroy");

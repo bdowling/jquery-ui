@@ -36,7 +36,7 @@ test( "ARIA", function() {
 test("widget method", function() {
 	expect( 1 );
 	var dialog = $("<div>").appendTo("#qunit-fixture").dialog();
-	deepEqual(dialog.parent()[0], dialog.dialog("widget")[0]);
+	deepEqual(dialog.parent()[ 0 ], dialog.dialog("widget")[ 0 ]);
 	dialog.remove();
 });
 
@@ -44,10 +44,10 @@ asyncTest( "focus tabbable", function() {
 	expect( 6 );
 	var element,
 		options = {
-			buttons: [{
+			buttons: [ {
 				text: "Ok",
 				click: $.noop
-			}]
+			} ]
 		};
 
 	function checkFocus( markup, options, testFn, next ) {
@@ -159,9 +159,9 @@ asyncTest( "Prevent tabbing out of dialogs", function() {
 		setTimeout( start );
 	}
 
-	inputs[1].focus();
+	inputs[ 1 ].focus();
 	setTimeout(function() {
-		equal( document.activeElement, inputs[1], "Focus set on second input" );
+		equal( document.activeElement, inputs[ 1 ], "Focus set on second input" );
 		inputs.eq( 1 ).simulate( "keydown", { keyCode: $.ui.keyCode.TAB });
 
 		setTimeout( checkTab );
@@ -170,7 +170,7 @@ asyncTest( "Prevent tabbing out of dialogs", function() {
 
 asyncTest( "#9048: multiple modal dialogs opened and closed in different order", function() {
 	expect( 1 );
-	$( "#dialog1, #dialog2" ).dialog({ autoOpen: false, modal:true });
+	$( "#dialog1, #dialog2" ).dialog({ autoOpen: false, modal: true });
 	$( "#dialog1" ).dialog( "open" );
 	$( "#dialog2" ).dialog( "open" );
 	$( "#dialog1" ).dialog( "close" );

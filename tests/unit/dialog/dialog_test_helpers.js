@@ -22,7 +22,7 @@ TestHelpers.dialog = {
 
 		actualDX = offsetAfter.left - offsetBefore.left;
 		actualDY = offsetAfter.top - offsetBefore.top;
-		ok( expectedDX - actualDX <= 1 && expectedDY - actualDY <= 1, "dragged[" + expectedDX + ", " + expectedDY + "] " + msg);
+		ok( expectedDX - actualDX <= 1 && expectedDY - actualDY <= 1, "dragged[ " + expectedDX + ", " + expectedDY + " ] " + msg);
 	},
 	shouldResize: function(element, dw, dh, msg) {
 		var heightAfter, widthAfter, actual, expected,
@@ -39,6 +39,6 @@ TestHelpers.dialog = {
 		msg = msg ? msg + "." : "";
 		actual = { width: widthAfter, height: heightAfter },
 		expected = { width: widthBefore + dw, height: heightBefore + dh };
-		deepEqual(actual, expected, "resized[" + 50 + ", " + 50 + "] " + msg);
+		deepEqual(actual, expected, "resized[ " + 50 + ", " + 50 + " ] " + msg);
 	}
 };

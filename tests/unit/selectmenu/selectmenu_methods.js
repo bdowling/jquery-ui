@@ -9,7 +9,6 @@ test( "destroy", function() {
 	});
 });
 
-
 test( "open / close", function() {
 	expect( 4 );
 
@@ -25,8 +24,7 @@ test( "open / close", function() {
 	equal( menu.attr( "aria-hidden" ), "true", "close: menu aria-disabled" );
 });
 
-
-test( "enable / disable", function () {
+test( "enable / disable", function() {
 	expect(10);
 
 	var element = $( "#speed" ).selectmenu(),
@@ -48,8 +46,7 @@ test( "enable / disable", function () {
 	equal( menu.attr( "aria-disabled" ), "false", "enable: menu wrapper ARIA" );
 });
 
-
-test( "refresh - structure", function () {
+test( "refresh - structure", function() {
 	expect( 3 );
 
 	var element = $( "#speed" ).selectmenu(),
@@ -68,7 +65,7 @@ test( "refresh - structure", function () {
 	equal( element.find( "option" ).first().text(), menu.find( "li" ).not( ".ui-selectmenu-optgroup" ).first().text(), "changed item" );
 });
 
-asyncTest( "refresh - change selected option", function () {
+asyncTest( "refresh - change selected option", function() {
 	expect( 4 );
 
 	var element = $( "#speed" ).selectmenu(),
@@ -94,8 +91,7 @@ asyncTest( "refresh - change selected option", function () {
 	}, 1 );
 });
 
-
-test( "refresh - disabled select", function () {
+test( "refresh - disabled select", function() {
 	expect( 4 );
 
 	var element = $( "#speed" ).selectmenu(),
@@ -111,8 +107,7 @@ test( "refresh - disabled select", function () {
 	equal( menu.attr( "aria-disabled" ), "true", "menu wrapper ARIA" );
 });
 
-
-test( "refresh - disabled option", function () {
+test( "refresh - disabled option", function() {
 	expect(1);
 
 	var disabledItem,
@@ -127,8 +122,7 @@ test( "refresh - disabled option", function () {
 	ok( disabledItem.hasClass( "ui-state-disabled" ), "class" );
 });
 
-
-test( "refresh - disabled optgroup", function () {
+test( "refresh - disabled optgroup", function() {
 
 	var i, item,
 		element = $( "#files" ).selectmenu(),

@@ -11,7 +11,7 @@ test( "$.widget.extend()", function() {
 		deep2 = { foo: { baz: true }, foo2: document },
 		deep2copy = { foo: { baz: true }, foo2: document },
 		deepmerged = { foo: { bar: true, baz: true }, foo2: document },
-		arr = [1, 2, 3],
+		arr = [ 1, 2, 3 ],
 		nestedarray = { arr: arr },
 		defaults = { xnumber1: 5, xnumber2: 7, xstring1: "peter", xstring2: "pan" },
 		defaultsCopy = { xnumber1: 5, xnumber2: 7, xstring1: "peter", xstring2: "pan" },
@@ -51,7 +51,7 @@ test( "$.widget.extend()", function() {
 	strictEqual( empty.foo.date, customObject, "Custom objects copy correctly (no methods)" );
 
 	// Makes the class a little more realistic
-	myKlass.prototype = { someMethod: function(){} };
+	myKlass.prototype = { someMethod: function() {} };
 	empty = {};
 	$.widget.extend( empty, optionsWithCustomObject );
 	strictEqual( empty.foo.date, customObject, "Custom objects copy correctly" );
@@ -69,11 +69,11 @@ test( "$.widget.extend()", function() {
 	strictEqual( nullUndef.xnumber0, null, "Check to make sure null values are inserted");
 
 	target = {};
-	recursive = { foo:target, bar:5 };
+	recursive = { foo: target, bar: 5 };
 	$.widget.extend( target, recursive );
 	deepEqual( target, { foo: {}, bar: 5 }, "Check to make sure a recursive obj doesn't go never-ending loop by not copying it over" );
 
-	ret = $.widget.extend( { foo: [] }, { foo: [0] } ); // 1907
+	ret = $.widget.extend( { foo: [] }, { foo: [ 0 ] } ); // 1907
 	equal( ret.foo.length, 1, "Check to make sure a value with coersion 'false' copies over when necessary to fix #1907" );
 
 	ret = $.widget.extend( { foo: "1,2,3" }, { foo: [ 1, 2, 3 ] } );
@@ -86,7 +86,7 @@ test( "$.widget.extend()", function() {
 	strictEqual( ret.foo, null, "Make sure a null value doesn't crash with deep extend, for #1908" );
 
 	obj = { foo: null };
-	$.widget.extend( obj, { foo:"notnull" } );
+	$.widget.extend( obj, { foo: "notnull" } );
 	equal( obj.foo, "notnull", "Make sure a null value can be overwritten" );
 
 	settings = $.widget.extend( {}, defaults, options1, options2 );
@@ -100,6 +100,6 @@ test( "$.widget.extend()", function() {
 	};
 	output = $.widget.extend( {}, input );
 	deepEqual( input, output, "don't clone arrays" );
-	input.key[0] = 10;
+	input.key[ 0 ] = 10;
 	deepEqual( input, output, "don't clone arrays" );
 });

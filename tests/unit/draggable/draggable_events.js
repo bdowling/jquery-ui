@@ -119,7 +119,6 @@ test( "stopping the stop callback", function() {
 
 	ok( element.draggable( "instance" ).helper, "the clone should not be deleted if the stop callback is stopped" );
 
-
 });
 
 })( jQuery );

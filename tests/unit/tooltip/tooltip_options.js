@@ -72,7 +72,7 @@ asyncTest( "content: sync + async callback", function() {
 });
 
 test( "content: change while open", function() {
-	expect( 2 ) ;
+	expect( 2 );
 	var element = $( "#tooltipped1" ).tooltip({
 		content: function() {
 			return "old";

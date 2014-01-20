@@ -61,12 +61,12 @@ test("destroy", function() {
 	});
 
 	// Don't throw errors when destroying a never opened modal dialog (#9004)
-	$( "#dialog1" ).dialog({ autoOpen: false, modal: true }).dialog( "destroy" );
+	$( "#dialog1" ).dialog( { autoOpen: false, modal: true } ).dialog( "destroy" );
 	equal( $( ".ui-widget-overlay" ).length, 0, "overlay does not exist" );
 	equal( $( document ).data( "ui-dialog-overlays" ), undefined, "ui-dialog-overlays equals the number of open overlays");
 
-	element = $( "#dialog1" ).dialog({ modal: true }),
-	element2 = $( "#dialog2" ).dialog({ modal: true });
+	element = $( "#dialog1" ).dialog( { modal: true } ),
+	element2 = $( "#dialog2" ).dialog( { modal: true } );
 	equal( $( ".ui-widget-overlay" ).length, 2, "overlays created when dialogs are open" );
 	equal( $( document ).data( "ui-dialog-overlays" ), 2, "ui-dialog-overlays equals the number of open overlays" );
 	element.dialog( "close" );
@@ -82,7 +82,7 @@ test("destroy", function() {
 
 asyncTest("#9000: Dialog leaves broken event handler after close/destroy in certain cases", function() {
 	expect( 1 );
-	$( "#dialog1" ).dialog({ modal:true }).dialog( "close" ).dialog( "destroy" );
+	$( "#dialog1" ).dialog( { modal: true } ).dialog( "close" ).dialog( "destroy" );
 	setTimeout(function() {
 		$( "#favorite-animal" ).focus();
 		ok( true, "close and destroy modal dialog before its really opened" );
@@ -90,14 +90,14 @@ asyncTest("#9000: Dialog leaves broken event handler after close/destroy in cert
 	}, 2 );
 });
 
-test("#4980: Destroy should place element back in original DOM position", function(){
+test("#4980: Destroy should place element back in original DOM position", function() {
 	expect( 2 );
 	var container = $("<div id='container'><div id='modal'>Content</div></div>"),
 		modal = container.find("#modal");
 	modal.dialog();
-	ok(!$.contains(container[0], modal[0]), "dialog should move modal element to outside container element");
+	ok(!$.contains(container[ 0 ], modal[ 0 ]), "dialog should move modal element to outside container element");
 	modal.dialog("destroy");
-	ok($.contains(container[0], modal[0]), "dialog(destroy) should place element back in original DOM position");
+	ok($.contains(container[ 0 ], modal[ 0 ]), "dialog(destroy) should place element back in original DOM position");
 });
 
 test( "enable/disable disabled", function() {
@@ -133,7 +133,7 @@ test("isOpen", function() {
 	equal(element.dialog("isOpen"), false, "dialog is closed");
 	element.remove();
 
-	element = $("<div></div>").dialog({autoOpen: false});
+	element = $("<div></div>").dialog( { autoOpen: false } );
 	equal(element.dialog("isOpen"), false, "dialog is closed after init");
 	element.dialog("open");
 	equal(element.dialog("isOpen"), true, "dialog is open");
@@ -187,7 +187,7 @@ test("open", function() {
 		actual = expected.dialog("open");
 	equal(actual, expected, "open is chainable");
 
-	element = $("<div></div>").dialog({ autoOpen: false });
+	element = $("<div></div>").dialog( { autoOpen: false } );
 	ok(element.dialog("widget").is(":hidden") && !element.dialog("widget").is(":visible"), "dialog hidden before open method called");
 	element.dialog("open");
 	ok(element.dialog("widget").is(":visible") && !element.dialog("widget").is(":hidden"), "dialog visible after open method called");
@@ -197,7 +197,7 @@ test("#6137: dialog('open') causes form elements to reset on IE7", function() {
 	expect(2);
 
 	var d1 = $("<form><input type='radio' name='radio' id='a' value='a' checked='checked'></input>" +
-				"<input type='radio' name='radio' id='b' value='b'>b</input></form>").appendTo( "body" ).dialog({autoOpen: false});
+				"<input type='radio' name='radio' id='b' value='b'>b</input></form>").appendTo( "body" ).dialog( { autoOpen: false } );
 
 	d1.find("#b").prop( "checked", true );
 	equal(d1.find("input:checked").val(), "b", "checkbox b is checked");
@@ -242,7 +242,7 @@ asyncTest( "#8958: dialog can be opened while opening", function() {
 		.focus();
 });
 
-test("#5531: dialog width should be at least minWidth on creation", function () {
+test("#5531: dialog width should be at least minWidth on creation", function() {
 	expect( 4 );
 	var element = $("<div></div>").dialog({
 			width: 200,
@@ -264,4 +264,4 @@ test("#5531: dialog width should be at least minWidth on creation", function () 
 
 });
 
-})(jQuery);
+} )(jQuery);

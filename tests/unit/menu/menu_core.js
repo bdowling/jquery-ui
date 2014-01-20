@@ -11,7 +11,7 @@ test( "markup structure", function() {
 	});
 });
 
-test( "accessibility", function () {
+test( "accessibility", function() {
 	expect( 4 );
 	var element = $( "#menu1" ).menu();
 

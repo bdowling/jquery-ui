@@ -89,7 +89,7 @@ test( "custom selector expression", function() {
 	var elem = $( "<div>" ).appendTo( "#qunit-fixture" );
 	$.widget( "ui.testWidget", {} );
 	elem.testWidget();
-	deepEqual( $( ":ui-testwidget" )[0], elem[0] );
+	deepEqual( $( ":ui-testwidget" )[ 0 ], elem[ 0 ] );
 	elem.testWidget( "destroy" );
 });
 
@@ -135,7 +135,7 @@ test( "jQuery usage", function() {
 
 	instance = elem.testWidget( "instance" );
 	equal( typeof instance, "object", "instance stored in .data(pluginName)" );
-	equal( instance.element[0], elem[0], "element stored on widget" );
+	equal( instance.element[ 0 ], elem[ 0 ], "element stored on widget" );
 	ret = elem.testWidget( "methodWithParams", "value1", "value2" );
 	equal( ret, elem, "jQuery object returned from method call" );
 
@@ -202,7 +202,7 @@ test( "error handling", function() {
 	expect( 3 );
 	var error = $.error;
 	$.widget( "ui.testWidget", {
-		_privateMethod: function () {}
+		_privateMethod: function() {}
 	});
 	$.error = function( msg ) {
 		equal( msg, "cannot call methods on testWidget prior to initialization; " +
@@ -214,7 +214,7 @@ test( "error handling", function() {
 			"invalid method call on widget instance" );
 	};
 	$( "<div>" ).testWidget().testWidget( "missing" );
-	$.error = function ( msg ) {
+	$.error = function( msg ) {
 		equal( msg, "no such method '_privateMethod' for testWidget widget instance",
 			"invalid method call on widget instance" );
 	};
@@ -402,7 +402,7 @@ test( "._super()", function() {
 			deepEqual( this, instance, "this is correct in testWidget2" );
 			deepEqual( a, 5, "parameter passed to testWidget2" );
 			deepEqual( b, 10, "parameter passed to testWidget2" );
-			return this._super( a, b*2 );
+			return this._super( a, b * 2 );
 		}
 	});
 
@@ -410,7 +410,7 @@ test( "._super()", function() {
 		method: function( a ) {
 			deepEqual( this, instance, "this is correct in testWidget3" );
 			deepEqual( a, 5, "parameter passed to testWidget3" );
-			var ret = this._super( a, a*2 );
+			var ret = this._super( a, a * 2 );
 			deepEqual( ret, 25, "super returned value" );
 		}
 	});
@@ -523,14 +523,14 @@ test( ".option() - delegate to ._setOptions()", function() {
 
 	calls = [];
 	div.testWidget( "option", "foo", "bar" );
-	deepEqual( calls, [{ foo: "bar" }], "_setOptions called for single option" );
+	deepEqual( calls, [ { foo: "bar" } ], "_setOptions called for single option" );
 
 	calls = [];
 	div.testWidget( "option", {
 		bar: "qux",
 		quux: "quuux"
 	});
-	deepEqual( calls, [{ bar: "qux", quux: "quuux" }],
+	deepEqual( calls, [ { bar: "qux", quux: "quuux" } ],
 		"_setOptions called with multiple options" );
 });
 
@@ -551,12 +551,12 @@ test( ".option() - delegate to ._setOption()", function() {
 
 	calls = [];
 	div.testWidget( "option", "foo", "bar" );
-	deepEqual( calls, [{ key: "foo", val: "bar" }],
+	deepEqual( calls, [ { key: "foo", val: "bar" } ],
 		"_setOption called for single option" );
 
 	calls = [];
 	div.testWidget( "option", "foo", undefined );
-	deepEqual( calls, [{ key: "foo", val: undefined }],
+	deepEqual( calls, [ { key: "foo", val: undefined } ],
 		"_setOption called for single option where value is undefined" );
 
 	calls = [];
@@ -631,7 +631,7 @@ test( ".widget() - base", function() {
 			_create: function() {}
 		}),
 		div = $( "<div>" ).testWidget();
-	deepEqual( div[0], div.testWidget( "widget" )[0]);
+	deepEqual( div[ 0 ], div.testWidget( "widget" )[ 0 ]);
 	deepEqual( constructor, $.ui.testWidget, "$.widget returns the constructor" );
 });
 
@@ -644,7 +644,7 @@ test( ".widget() - overriden", function() {
 			return wrapper;
 		}
 	});
-	deepEqual( wrapper[0], $( "<div>" ).testWidget().testWidget( "widget" )[0] );
+	deepEqual( wrapper[ 0 ], $( "<div>" ).testWidget().testWidget( "widget" )[ 0 ] );
 });
 
 test( ".instance()", function() {
@@ -674,12 +674,12 @@ test( "._on() to element (default)", function() {
 		},
 		keyup: function( event ) {
 			equal( that, this );
-			equal( that.element[0], event.currentTarget );
+			equal( that.element[ 0 ], event.currentTarget );
 			equal( "keyup", event.type );
 		},
 		keydown: function( event ) {
 			equal( that, this );
-			equal( that.element[0], event.currentTarget );
+			equal( that.element[ 0 ], event.currentTarget );
 			equal( "keydown", event.type );
 		}
 	});
@@ -714,12 +714,12 @@ test( "._on() to element with suppressDisabledCheck", function() {
 		},
 		keyup: function( event ) {
 			equal( that, this );
-			equal( that.element[0], event.currentTarget );
+			equal( that.element[ 0 ], event.currentTarget );
 			equal( "keyup", event.type );
 		},
 		keydown: function( event ) {
 			equal( that, this );
-			equal( that.element[0], event.currentTarget );
+			equal( that.element[ 0 ], event.currentTarget );
 			equal( "keydown", event.type );
 		}
 	});
@@ -754,12 +754,12 @@ test( "._on() to descendent", function() {
 		},
 		keyup: function( event ) {
 			equal( that, this );
-			equal( that.element.find( "strong" )[0], event.currentTarget );
+			equal( that.element.find( "strong" )[ 0 ], event.currentTarget );
 			equal( "keyup", event.type );
 		},
 		keydown: function(event) {
 			equal( that, this );
-			equal( that.element.find( "strong" )[0], event.currentTarget );
+			equal( that.element.find( "strong" )[ 0 ], event.currentTarget );
 			equal( "keydown", event.type );
 		}
 	});
@@ -906,7 +906,7 @@ test( "_off() - single event", function() {
 		widget = element.testWidget().testWidget( "instance" );
 	widget._on( element, { foo: function() {
 		ok( shouldTriggerWidget, "foo called from _on" );
-	}});
+	} });
 	element.bind( "foo", function() {
 		ok( shouldTriggerOther, "foo called from bind" );
 	});

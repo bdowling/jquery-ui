@@ -10,14 +10,14 @@ test( "programmatic triggers", function() {
 	element.one( "tooltipopen", function( event, ui ) {
 		tooltip = ui.tooltip;
 		ok( !( "originalEvent" in event ), "open" );
-		strictEqual( ui.tooltip[0],
-			$( "#" + element.data( "ui-tooltip-id" ) )[0], "ui.tooltip" );
+		strictEqual( ui.tooltip[ 0 ],
+			$( "#" + element.data( "ui-tooltip-id" ) )[ 0 ], "ui.tooltip" );
 	});
 	element.tooltip( "open" );
 
 	element.one( "tooltipclose", function( event, ui ) {
 		ok( !( "originalEvent" in event ), "close" );
-		strictEqual( ui.tooltip[0], tooltip[0], "ui.tooltip" );
+		strictEqual( ui.tooltip[ 0 ], tooltip[ 0 ], "ui.tooltip" );
 	});
 	element.tooltip( "close" );
 });

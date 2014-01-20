@@ -398,7 +398,7 @@ test( "{ heightStyle: 'fill' } with sibling", function() {
 		})
 		.prependTo( "#navigationWrapper" );
 	var element = $( "#navigation" ).accordion({ heightStyle: "fill" });
-	equalHeight( element , 355 );
+	equalHeight( element, 355 );
 });
 
 test( "{ heightStyle: 'fill' } with multiple siblings", function() {

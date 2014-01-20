@@ -35,14 +35,13 @@ asyncTest( "accessibility", function() {
 			links.eq( element[ 0 ].selectedIndex ).attr( "id" ),
 			"menu aria-activedescendant"
 		);
-		$.each( links, function( index ){
+		$.each( links, function( index ) {
 			equal( $( this ).attr( "role" ), "option", "menu link #" + index +" role" );
 			equal( $( this ).attr( "tabindex" ), -1, "menu link #" + index +" tabindex" );
 		});
 		start();
 	});
 });
-
 
 $.each([
 	{
@@ -54,7 +53,7 @@ $.each([
 		selector: "#files"
 	}
 ], function( i, settings ) {
-	asyncTest( "state synchronization - after keydown on button - " + settings.type, function () {
+	asyncTest( "state synchronization - after keydown on button - " + settings.type, function() {
 		expect( 4 );
 
 		var links,
@@ -80,7 +79,7 @@ $.each([
 			);
 			equal(
 				element.find( "option:selected" ).val(),
-				selected.next( "option" ).val() ,
+				selected.next( "option" ).val(),
 				"original select state"
 			);
 			equal( button.text(), selected.next( "option" ).text(), "button text" );
@@ -88,7 +87,7 @@ $.each([
 		}, 1 );
 	});
 
-	asyncTest( "state synchronization - after click on item - " + settings.type, function () {
+	asyncTest( "state synchronization - after click on item - " + settings.type, function() {
 		expect( 4 );
 
 		var links,
@@ -122,7 +121,7 @@ $.each([
 		}, 1 );
 	});
 
-	asyncTest( "state synchronization - after focus item and keydown on button - " + settings.type, function () {
+	asyncTest( "state synchronization - after focus item and keydown on button - " + settings.type, function() {
 		expect( 4 );
 
 		var links,
@@ -150,14 +149,14 @@ $.each([
 
 				equal( menu.attr( "aria-activedescendant" ), links.eq( 1 ).attr( "id" ), "menu aria-activedescendant" );
 				equal( button.attr( "aria-activedescendant" ), links.eq( 1 ).attr( "id" ), "button aria-activedescendant" );
-				equal( element.find( "option:selected" ).val(), options.eq( 1 ).val() , "original select state" );
+				equal( element.find( "option:selected" ).val(), options.eq( 1 ).val(), "original select state" );
 				equal( button.text(), options.eq( 1 ).text(), "button text" );
 				start();
 			}, 1 );
 		}, 1 );
 	});
 
-	asyncTest( "item looping - " + settings.type, function () {
+	asyncTest( "item looping - " + settings.type, function() {
 		expect( 2 );
 
 		var links,
@@ -184,7 +183,7 @@ $.each([
 		}, 1 );
 	});
 
-	asyncTest( "item focus and active state - " + settings.type, function () {
+	asyncTest( "item focus and active state - " + settings.type, function() {
 		expect( 8 );
 
 		var element = $( settings.selector ).selectmenu(),
@@ -231,7 +230,7 @@ $.each([
 		}
 	});
 
-	asyncTest( "empty option - " + settings.type, function () {
+	asyncTest( "empty option - " + settings.type, function() {
 		expect( 7 );
 
 		var element = $( settings.selector ),

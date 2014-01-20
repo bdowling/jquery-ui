@@ -1,11 +1,11 @@
 (function($) {
 
 function present( value, array, message ) {
-	QUnit.push( jQuery.inArray( value, array ) !== -1 , value, array, message );
+	QUnit.push( jQuery.inArray( value, array ) !== -1, value, array, message );
 }
 
 function notPresent( value, array, message ) {
-	QUnit.push( jQuery.inArray( value, array ) === -1 , value, array, message );
+	QUnit.push( jQuery.inArray( value, array ) === -1, value, array, message );
 }
 
 // minDuration is used for "short" animate tests where we are only concerned about the final
@@ -74,7 +74,6 @@ test( "removeClass", function() {
 	element.removeClass();
 	equal( "", element[ 0 ].className );
 });
-
 
 /* TODO: Disabled - Can't figure out why this is failing in IE 6/7
 test( "createWrapper and removeWrapper retain focused elements (#7595)", function() {
@@ -183,7 +182,7 @@ asyncTest( "animateClass works with children", 3, function() {
 
 asyncTest( "animateClass clears style properties when stopped", function() {
 	var test = $("div.animateClass"),
-		style = test[0].style,
+		style = test[ 0 ].style,
 		orig = style.cssText;
 
 	expect( 2 );
@@ -212,7 +211,6 @@ asyncTest( "animateClass: css and class changes during animation are not lost (#
 		.addClass( "testClass" )
 		.height( 100 );
 });
-
 
 $.each( $.effects.effect, function( effect ) {
 	module( "effects." + effect );
@@ -243,11 +241,11 @@ $.each( $.effects.effect, function( effect ) {
 		}
 
 		hidden.queue( queueTest() ).show( effect, minDuration, queueTest(function() {
-			equal( hidden.css("display"), "block", "Hidden is shown after .show(\"" +effect+ "\", time)" );
+			equal( hidden.css("display"), "block", "Hidden is shown after .show(\"" + effect + "\", time)" );
 		})).queue( queueTest() ).hide( effect, minDuration, queueTest(function() {
-			equal( hidden.css("display"), "none", "Back to hidden after .hide(\"" +effect+ "\", time)" );
+			equal( hidden.css("display"), "none", "Back to hidden after .hide(\"" + effect + "\", time)" );
 		})).queue( queueTest(function() {
-			deepEqual( hidden.queue(), ["inprogress"], "Only the inprogress sentinel remains");
+			deepEqual( hidden.queue(), [ "inprogress" ], "Only the inprogress sentinel remains");
 			start();
 		}));
 	});
@@ -255,12 +253,12 @@ $.each( $.effects.effect, function( effect ) {
 	asyncTest( "relative width & height - properties are preserved", function() {
 		var test = $("div.relWidth.relHeight"),
 			width = test.width(), height = test.height(),
-			cssWidth = test[0].style.width, cssHeight = test[0].style.height;
+			cssWidth = test[ 0 ].style.width, cssHeight = test[ 0 ].style.height;
 
 		expect( 4 );
 		test.toggle( effect, minDuration, function() {
-			equal( test[0].style.width, cssWidth, "Inline CSS Width has been reset after animation ended" );
-			equal( test[0].style.height, cssHeight, "Inline CSS Height has been rest after animation ended" );
+			equal( test[ 0 ].style.width, cssWidth, "Inline CSS Width has been reset after animation ended" );
+			equal( test[ 0 ].style.height, cssHeight, "Inline CSS Height has been rest after animation ended" );
 			start();
 		});
 		equal( test.width(), width, "Width is the same px after animation started" );

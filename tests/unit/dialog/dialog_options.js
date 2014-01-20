@@ -11,16 +11,16 @@ test( "appendTo", function() {
 		element = $( "#dialog1" ).dialog({
 			modal: true
 		});
-	equal( element.dialog( "widget" ).parent()[0], document.body, "defaults to body" );
-	equal( $( ".ui-widget-overlay" ).parent()[0], document.body, "overlay defaults to body" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], document.body, "defaults to body" );
+	equal( $( ".ui-widget-overlay" ).parent()[ 0 ], document.body, "overlay defaults to body" );
 	element.dialog( "destroy" );
 
 	element.dialog({
 		appendTo: ".wrap",
 		modal: true
 	});
-	equal( element.dialog( "widget" ).parent()[0], $( "#wrap1" )[0], "first found element" );
-	equal( $( ".ui-widget-overlay" ).parent()[0], $( "#wrap1" )[0], "overlay first found element" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], $( "#wrap1" )[ 0 ], "first found element" );
+	equal( $( ".ui-widget-overlay" ).parent()[ 0 ], $( "#wrap1" )[ 0 ], "overlay first found element" );
 	equal( $( "#wrap2 .ui-dialog" ).length, 0, "only appends to one element" );
 	equal( $( "#wrap2 .ui-widget-overlay" ).length, 0, "overlay only appends to one element" );
 	element.dialog( "destroy" );
@@ -29,39 +29,39 @@ test( "appendTo", function() {
 		appendTo: null,
 		modal: true
 	});
-	equal( element.dialog( "widget" ).parent()[0], document.body, "null" );
-	equal( $( ".ui-widget-overlay" ).parent()[0], document.body, "overlay null" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], document.body, "null" );
+	equal( $( ".ui-widget-overlay" ).parent()[ 0 ], document.body, "overlay null" );
 	element.dialog( "destroy" );
 
 	element.dialog({
 		autoOpen: false,
 		modal: true
 	}).dialog( "option", "appendTo", "#wrap1" ).dialog( "open" );
-	equal( element.dialog( "widget" ).parent()[0], $( "#wrap1" )[0], "modified after init" );
-	equal( $( ".ui-widget-overlay" ).parent()[0], $( "#wrap1" )[0], "overlay modified after init" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], $( "#wrap1" )[ 0 ], "modified after init" );
+	equal( $( ".ui-widget-overlay" ).parent()[ 0 ], $( "#wrap1" )[ 0 ], "overlay modified after init" );
 	element.dialog( "destroy" );
 
 	element.dialog({
 		appendTo: detached,
 		modal: true
 	});
-	equal( element.dialog( "widget" ).parent()[0], detached[0], "detached jQuery object" );
-	equal( detached.find( ".ui-widget-overlay" ).parent()[0], detached[0], "overlay detached jQuery object" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], detached[ 0 ], "detached jQuery object" );
+	equal( detached.find( ".ui-widget-overlay" ).parent()[ 0 ], detached[ 0 ], "overlay detached jQuery object" );
 	element.dialog( "destroy" );
 
 	element.dialog({
-		appendTo: detached[0],
+		appendTo: detached[ 0 ],
 		modal: true
 	});
-	equal( element.dialog( "widget" ).parent()[0], detached[0], "detached DOM element" );
-	equal( detached.find( ".ui-widget-overlay" ).parent()[0], detached[0], "overlay detached DOM element" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], detached[ 0 ], "detached DOM element" );
+	equal( detached.find( ".ui-widget-overlay" ).parent()[ 0 ], detached[ 0 ], "overlay detached DOM element" );
 	element.dialog( "destroy" );
 
 	element.dialog({
 		autoOpen: false,
 		modal: true
 	}).dialog( "option", "appendTo", detached );
-	equal( element.dialog( "widget" ).parent()[0], detached[0], "detached DOM element via option()" );
+	equal( element.dialog( "widget" ).parent()[ 0 ], detached[ 0 ], "detached DOM element via option()" );
 	equal( detached.find( ".ui-widget-overlay" ).length, 0, "overlay detached DOM element via option()" );
 	element.dialog( "destroy" );
 });
@@ -85,13 +85,13 @@ test("buttons", function() {
 		buttons = {
 			"Ok": function( ev ) {
 				ok(true, "button click fires callback");
-				equal(this, element[0], "context of callback");
-				equal(ev.target, btn[0], "event target");
+				equal(this, element[ 0 ], "context of callback");
+				equal(ev.target, btn[ 0 ], "event target");
 			},
 			"Cancel": function( ev ) {
 				ok(true, "button click fires callback");
-				equal(this, element[0], "context of callback");
-				equal(ev.target, btn[1], "event target");
+				equal(this, element[ 0 ], "context of callback");
+				equal(ev.target, btn[ 1 ], "event target");
 			}
 		},
 		element = $("<div></div>").dialog({ buttons: buttons });
@@ -101,7 +101,7 @@ test("buttons", function() {
 
 	i = 0;
 	$.each(buttons, function( key ) {
-		equal(btn.eq(i).text(), key, "text of button " + (i+1));
+		equal(btn.eq(i).text(), key, "text of button " + (i + 1));
 		i++;
 	});
 
@@ -113,8 +113,8 @@ test("buttons", function() {
 	newButtons = {
 		"Close": function( ev ) {
 			ok(true, "button click fires callback");
-			equal(this, element[0], "context of callback");
-			equal(ev.target, btn[0], "event target");
+			equal(this, element[ 0 ], "context of callback");
+			equal(ev.target, btn[ 0 ], "event target");
 		}
 	};
 
@@ -128,7 +128,7 @@ test("buttons", function() {
 
 	i = 0;
 	$.each(newButtons, function( key ) {
-		equal(btn.eq(i).text(), key, "text of button " + (i+1));
+		equal(btn.eq(i).text(), key, "text of button " + (i + 1));
 		i += 1;
 	});
 
@@ -152,7 +152,7 @@ test("buttons - advanced", function() {
 					"class": "additional-class",
 					id: "my-button-id",
 					click: function() {
-						equal(this, element[0], "correct context");
+						equal(this, element[ 0 ], "correct context");
 					},
 					icons: {
 						primary: "ui-icon-cancel"
@@ -512,7 +512,7 @@ test("width", function() {
 		closeEnough(element.dialog("widget").width(), 300, 1, "default width");
 	element.remove();
 
-	element = $("<div></div>").dialog({width: 437 });
+	element = $("<div></div>").dialog( { width: 437 } );
 		closeEnough(element.dialog("widget").width(), 437, 1, "explicit width");
 		element.dialog("option", "width", 438);
 		closeEnough(element.dialog("widget").width(), 438, 1, "explicit width after init");
@@ -522,20 +522,20 @@ test("width", function() {
 test("#4826: setting resizable false toggles resizable on dialog", function() {
 	expect(6);
 	var i,
-		element = $("<div></div>").dialog({ resizable: false });
+		element = $("<div></div>").dialog( { resizable: false } );
 
 	TestHelpers.dialog.shouldResize(element, 0, 0, "[default]");
-	for (i=0; i<2; i++) {
+	for (i = 0; i < 2; i++) {
 		element.dialog("close").dialog("open");
-		TestHelpers.dialog.shouldResize(element, 0, 0, "initialized with resizable false toggle ("+ (i+1) +")");
+		TestHelpers.dialog.shouldResize(element, 0, 0, "initialized with resizable false toggle (" + (i + 1) + ")");
 	}
 	element.remove();
 
 	element = $("<div></div>").dialog({ resizable: true });
 	TestHelpers.dialog.shouldResize(element, 50, 50, "[default]");
-	for (i=0; i<2; i++) {
+	for (i = 0; i < 2; i++) {
 		element.dialog("close").dialog("option", "resizable", false).dialog("open");
-		TestHelpers.dialog.shouldResize(element, 0, 0, "set option resizable false toggle ("+ (i+1) +")");
+		TestHelpers.dialog.shouldResize(element, 0, 0, "set option resizable false toggle (" + (i + 1) + ")");
 	}
 	element.remove();
 

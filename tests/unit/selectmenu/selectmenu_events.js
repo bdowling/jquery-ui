@@ -1,19 +1,19 @@
-(function ( $ ) {
+(function( $ ) {
 
 module( "selectmenu: events", {
-	setup: function () {
+	setup: function() {
 		this.element = $( "#speed" );
 	}
 });
 
-asyncTest( "change", function () {
+asyncTest( "change", function() {
 	expect( 5 );
 
 	var optionIndex = 1,
 		button, menu, options;
 
 	this.element.selectmenu({
-		change: function ( event, ui ) {
+		change: function( event, ui ) {
 			ok( event, "change event fired on change" );
 			equal( event.type, "selectmenuchange", "event type set to selectmenuchange" );
 			equal( ui.item.index, optionIndex, "ui.item.index contains correct option index" );
@@ -35,12 +35,11 @@ asyncTest( "change", function () {
 	}, 1 );
 });
 
-
-test( "close", function () {
+test( "close", function() {
 	expect( 4 );
 
 	this.element.selectmenu({
-		close: function ( event ) {
+		close: function( event ) {
 			ok( event, "close event fired on close" );
 			equal( event.type, "selectmenuclose", "event type set to selectmenuclose" );
 		}
@@ -52,8 +51,7 @@ test( "close", function () {
 	$( "body" ).trigger( "mousedown" );
 });
 
-
-asyncTest( "focus", function () {
+asyncTest( "focus", function() {
 	expect( 12 );
 
 	var that = this,
@@ -62,7 +60,7 @@ asyncTest( "focus", function () {
 		button, menu, links;
 
 	this.element.selectmenu({
-		focus: function ( event, ui ) {
+		focus: function( event, ui ) {
 			ok( event, "focus event fired on element #" + optionIndex + " mouseover" );
 			equal( event.type, "selectmenufocus", "event type set to selectmenufocus" );
 			equal( ui.item.index, optionIndex, "ui.item.index contains correct option index" );
@@ -91,12 +89,11 @@ asyncTest( "focus", function () {
 	}, 1 );
 });
 
-
-test( "open", function () {
+test( "open", function() {
 	expect( 2 );
 
 	this.element.selectmenu({
-		open: function ( event ) {
+		open: function( event ) {
 			ok( event, "open event fired on open" );
 			equal( event.type, "selectmenuopen", "event type set to selectmenuopen" );
 		}
@@ -105,12 +102,11 @@ test( "open", function () {
 	this.element.selectmenu( "open" );
 });
 
-
-asyncTest( "select", function () {
+asyncTest( "select", function() {
 	expect( 4 );
 
 	this.element.selectmenu({
-		select: function ( event, ui ) {
+		select: function( event, ui ) {
 			ok( event, "select event fired on item select" );
 			equal( event.type, "selectmenuselect", "event type set to selectmenuselect" );
 			equal( ui.item.index, optionIndex, "ui.item.index contains correct option index" );
