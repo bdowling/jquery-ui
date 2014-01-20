@@ -217,4 +217,4 @@ test( "resize (containment) works with parent with negative offset", function() 
 
 });
 
-})(jQuery);
+})( jQuery );

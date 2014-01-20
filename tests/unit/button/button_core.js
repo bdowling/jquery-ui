@@ -208,4 +208,4 @@ asyncTest( "#9169 - Disabled button maintains ui-state-focus", function() {
 	});
 });
 
-})(jQuery);
+})( jQuery );

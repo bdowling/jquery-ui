@@ -61,4 +61,4 @@ test("filter", function() {
 	el.selectable("destroy");
 });
 
-})(jQuery);
+})( jQuery );

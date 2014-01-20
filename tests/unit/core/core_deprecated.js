@@ -7,7 +7,7 @@ test( "zIndex", function() {
 	var el = $( "#zIndexAutoWithParent" ),
 		parent = el.parent();
 	equal( el.zIndex(), 100, "zIndex traverses up to find value" );
-	equal( parent.zIndex(200 ), parent, "zIndex setter is chainable" );
+	equal( parent.zIndex( 200 ), parent, "zIndex setter is chainable" );
 	equal( el.zIndex(), 200, "zIndex setter changed zIndex" );
 
 	el = $( "#zIndexAutoWithParentViaCSS" );

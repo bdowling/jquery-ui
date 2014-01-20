@@ -35,7 +35,7 @@ test( "enable", function() {
 	var element,
 		expected = $( "<div></div>" ).slider(),
 		actual = expected.slider( "enable" );
-	equal(actual, expected, "enable is chainable" );
+	equal( actual, expected, "enable is chainable" );
 
 	element = $( "<div></div>" ).slider({ disabled: true });
 	ok( element.hasClass( "ui-state-disabled" ), "slider has ui-state-disabled class before enable method call" );
@@ -50,7 +50,7 @@ test( "disable", function() {
 	var element,
 		expected = $( "<div></div>" ).slider(),
 		actual = expected.slider( "disable" );
-	equal(actual, expected, "disable is chainable" );
+	equal( actual, expected, "disable is chainable" );
 
 	element = $( "<div></div>" ).slider({ disabled: false });
 	ok( !element.hasClass( "ui-state-disabled" ), "slider does not have ui-state-disabled class before disabled method call" );

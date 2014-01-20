@@ -218,9 +218,9 @@ test( "nested resizable", function() {
 	outer.appendTo( target );
 	inner.appendTo( outer );
 
-	inner.resizable( { handles: "e" } );
-	outer.resizable( { handles: "e" } );
-	target.resizable( { handles: "e" } );
+	inner.resizable({ handles: "e" });
+	outer.resizable({ handles: "e" });
+	target.resizable({ handles: "e" });
 
 	innerHandle = $( "#inner > .ui-resizable-e" );
 	outerHandle = $( "#outer > .ui-resizable-e" );
@@ -239,4 +239,4 @@ test( "nested resizable", function() {
 	outer.remove();
 });
 
-})(jQuery);
+})( jQuery );

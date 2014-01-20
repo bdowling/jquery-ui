@@ -18,4 +18,4 @@ test( "disable", function() {
 	equal( chainable, element, "disable is chainable" );
 });
 
-})(jQuery);
+})( jQuery );

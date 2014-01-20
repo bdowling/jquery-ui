@@ -33,4 +33,4 @@ asyncTest( "when button loses focus, ensure active state is removed (#8559)", fu
 	});
 });
 
-})(jQuery);
+})( jQuery );

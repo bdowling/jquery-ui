@@ -457,4 +457,4 @@ test("{ zIndex: false }", function() {
 	ok(false, "missing test - untested code is broken code.");
 });
 */
-})(jQuery);
+})( jQuery );

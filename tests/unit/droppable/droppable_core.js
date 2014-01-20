@@ -26,4 +26,4 @@ test("element types", function() {
 	});
 });
 
-})(jQuery);
+})( jQuery );

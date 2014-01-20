@@ -16,7 +16,7 @@ TestHelpers.datepicker = {
 	},
 	init: function( id, options ) {
 		$.datepicker.setDefaults( $.datepicker.regional[ "" ] );
-		return $( id ).datepicker( $.extend( { showAnim: "" }, options || { } ) );
+		return $( id ).datepicker( $.extend( { showAnim: "" }, options || {} ) );
 	},
 	initNewInput: function( options ) {
 		var id = $( "<input>" ).appendTo( "#qunit-fixture" );

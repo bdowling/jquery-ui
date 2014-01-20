@@ -121,4 +121,4 @@ test( "#5295 - button does not remove hoverstate if disabled", function() {
 	ok( !btn.is( ".ui-state-hover") );
 });
 
-})(jQuery);
+})( jQuery );

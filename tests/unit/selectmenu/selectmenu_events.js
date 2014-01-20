@@ -128,4 +128,4 @@ asyncTest( "select", function() {
 	}, 1 );
 });
 
-})(jQuery);
+})( jQuery );

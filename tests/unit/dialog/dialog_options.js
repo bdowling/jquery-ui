@@ -512,7 +512,7 @@ test("width", function() {
 		closeEnough(element.dialog("widget").width(), 300, 1, "default width");
 	element.remove();
 
-	element = $("<div></div>").dialog( { width: 437 } );
+	element = $("<div></div>").dialog({ width: 437 });
 		closeEnough(element.dialog("widget").width(), 437, 1, "explicit width");
 		element.dialog("option", "width", 438);
 		closeEnough(element.dialog("widget").width(), 438, 1, "explicit width after init");
@@ -522,7 +522,7 @@ test("width", function() {
 test("#4826: setting resizable false toggles resizable on dialog", function() {
 	expect(6);
 	var i,
-		element = $("<div></div>").dialog( { resizable: false } );
+		element = $("<div></div>").dialog({ resizable: false });
 
 	TestHelpers.dialog.shouldResize(element, 0, 0, "[default]");
 	for (i = 0; i < 2; i++) {
@@ -581,4 +581,4 @@ asyncTest( "Open followed by close during show effect", function() {
 	}, 100 );
 });
 
-})(jQuery);
+})( jQuery );

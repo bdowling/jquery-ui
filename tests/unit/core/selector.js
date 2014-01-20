@@ -248,4 +248,4 @@ test( "tabbable - dimensionless parent with overflow", function() {
 	isTabbable( "#dimensionlessParent", "input" );
 });
 
-})(jQuery);
+})( jQuery );

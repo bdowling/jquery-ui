@@ -228,4 +228,4 @@ asyncTest( "interaction between overlay and other dialogs", function() {
 	});
 });
 
-})(jQuery);
+})( jQuery );

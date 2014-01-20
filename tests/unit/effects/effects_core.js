@@ -266,4 +266,4 @@ $.each( $.effects.effect, function( effect ) {
 	});
 });
 
-})(jQuery);
+})( jQuery );

@@ -366,4 +366,4 @@ test("ensure dialog keeps focus when clicking modal overlay", function() {
 	element.remove();
 });
 
-})(jQuery);
+})( jQuery );

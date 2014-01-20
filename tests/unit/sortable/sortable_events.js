@@ -271,4 +271,4 @@ test("deactivate", function() {
 });
 */
 
-})(jQuery);
+})( jQuery );
